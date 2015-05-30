@@ -7,5 +7,5 @@ def run():
     if result.skipped:
         print '\nSkipped tests:'
         for test, reason in result.skipped:
-            test_name = test.id().split('.')[2]
-            print '%s: %s' % (test_name, reason)
+            test_id = test.id().split('.')
+            print '%s (%s): %s' % (test_id[2], test_id[1], reason)

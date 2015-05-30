@@ -37,8 +37,13 @@ class TestLocation(unittest.TestCase):
         """
         Tests the go function
         """
-        self.add_neighbor('north', self.location2)
-        loc = self.go('north')
+        self.location.add_neighbor('north', self.location2)
+        loc = self.location.go('north')
         self.assertIs(loc, self.location2)
-        loc = self.go('south')
+        loc = self.location.go('south')
         self.assertIs(loc, self.location)
+
+    @unittest.skip('Unskip this test when making the game')
+    def test_get_long_description(self):
+        result = self.location.get_long_description()
+        self.assertIsInstance(result, str)
