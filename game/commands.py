@@ -1,5 +1,5 @@
 # Our packages
-from game_exceptions import UnimplementedException, QuitGame
+from game.exceptions import UnimplementedException, QuitGame
 from utils import capture_input, colorize
 from constants import DIRECTION_ALIASES
 
@@ -18,9 +18,6 @@ class Command(object):
 
         @param user_input (List<String>) -- the user's input split by whitespace
         @param game_state (GameState) -- the current game state
-
-        @return (None|String) any message that GameState should deal with. Typically, should
-            not return anything.
         """
         raise UnimplementedException
 
@@ -104,7 +101,7 @@ class Go(Command):
     def execute(user_input, game_state):
         location = game_state.curr_location
         if len(user_input) == 1:
-            print 'Available directions: %s' % location.get_directions()
+            print 'Available directions: %s' % ', '.join(location.get_directions())
         else:
             direction = user_input[1]
             try:

@@ -1,4 +1,5 @@
 from constants import GAME_PROMPT
+from exceptions import QuitGame
 
 def capture_input(prompt=GAME_PROMPT):
     """
@@ -9,9 +10,7 @@ def capture_input(prompt=GAME_PROMPT):
         try:
             user_input = raw_input(prompt)
         except (KeyboardInterrupt, EOFError):
-            # add newline
-            print
-            user_input = 'quit'
+            raise QuitGame
     return user_input.lower().split()
 
 COLORS = {

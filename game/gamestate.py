@@ -4,7 +4,7 @@ import pickle
 from commands import ALL_COMMANDS
 from constants import SAVE_LOCATION
 from utils import capture_input, colorize
-from game_exceptions import QuitGame
+from game.exceptions import QuitGame
 
 import locations
 
@@ -46,7 +46,10 @@ class GameState(object):
             print colorize('\n%s:' % self.curr_location.name, 'cyan')
             print colorize(self.curr_location.description, 'yellow')
 
-            user_input = capture_input()
+            try:
+                user_input = capture_input()
+            except QuitGame:
+                break
 
             # the primary command is the first word in the user input
             command = user_input[0]
@@ -66,7 +69,7 @@ class GameState(object):
                 self.do_finish()
                 return
 
-        print colorize('Exiting the game...', 'red')
+        print colorize('\nExiting the game...', 'red')
 
     def do_intro(self):
         """

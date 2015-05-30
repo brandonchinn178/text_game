@@ -1,4 +1,4 @@
-from game_exceptions import UnimplementedException
+from game.exceptions import UnimplementedException
 
 class Location(object):
     """
@@ -18,11 +18,7 @@ class Location(object):
     def __init__(self, name, description, *items):
         """
         Initialize changeable properties of a location here. Accepts any number of arguments
-        that represents the items in this location initially
-
-        Location()               -> items: []
-        Location(Item())         -> items: [<Item>]
-        Location(Item(), Item()) -> items: [<Item>, <Item>]
+        that represents the items in this location initially.
         """
         self.name = name
         self.description = description
@@ -41,11 +37,11 @@ class Location(object):
         """
         Adds the provided location in the specified direction
         """
-        self.neighbors[direction] = location
+        raise UnimplementedException
 
     def get_directions(self):
         """
-        Returns the available directions to move
+        @returns (List<String>) the available directions to move
         """
         raise UnimplementedException
 
@@ -53,6 +49,10 @@ class Location(object):
         """
         Returns the Location in the given direction. If there is no neighbor in that
         direction, print out a message and return self.
+
+        @param direction (String) -- the full name of the direction to go (not alias)
+
+        @returns (Location) the Location in the given direction, or self if None
         """
         raise UnimplementedException
 

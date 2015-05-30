@@ -6,7 +6,7 @@ This project is a general layout for a text-based game similar to Zork. In the f
 Installation
 ------------
 
-As of now, you do not need to install anything to develop or run this game, aside from using Python 2. Python 3 may work, but there might be slight syntax differences in the conversion.
+To test your code, you will need to download the Python library `mock`. The easiest way to do this is to download [pip](https://pip.pypa.io/en/stable/installing.html) and call `pip install -r requirements.txt` or just simply `pip install mock`.
 
 Running
 -------
@@ -28,5 +28,5 @@ In this project, the following files are provided:
 - `locations.py`: This is the file containing the locations available in the game.
 - `items.py`: This is the file containing items available for use in the game.
 - `constants.py`: This is the file containing constants used in the code.
-- `game_exceptions.py`: This is the file containing the game-specific Exception classes that will be passed around.
+- `exceptions.py`: This is the file containing the game-specific Exception classes that will be passed around.
 - `utils.py`: This is the file containing helper functions that make certain tasks easier.
