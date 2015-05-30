@@ -18,15 +18,15 @@ File Layout
 
 In this project, the following files are provided:
 
-    - `main.py`: This is the entrypoint where you can run the game or test your code on the command line. It also contains the `play()` function that will run the game.
-    - `test/`: This directory contains the unittests used for checking the code.
+- `main.py`: This is the entrypoint where you can run the game or test your code on the command line. It also contains the `play()` function that will run the game.
+- `test/`: This directory contains the unittests used for checking the code.
 
 ### `game/` directory
 
-    - `gamestate.py`: This is the file containing the GameState class that tracks the player's progress in the game.
-    - `commands.py`: This is the file containing the commands that will be available for use in the game.
-    - `locations.py`: This is the file containing the locations available in the game.
-    - `items.py`: This is the file containing items available for use in the game.
-    - `constants.py`: This is the file containing constants used in the code.
-    - `game_exceptions.py`: This is the file containing the game-specific Exception classes that will be passed around.
-    - `utils.py`: This is the file containing helper functions that make certain tasks easier.
+- `gamestate.py`: This is the file containing the GameState class that tracks the player's progress in the game.
+- `commands.py`: This is the file containing the commands that will be available for use in the game.
+- `locations.py`: This is the file containing the locations available in the game.
+- `items.py`: This is the file containing items available for use in the game.
+- `constants.py`: This is the file containing constants used in the code.
+- `game_exceptions.py`: This is the file containing the game-specific Exception classes that will be passed around.
+- `utils.py`: This is the file containing helper functions that make certain tasks easier.
