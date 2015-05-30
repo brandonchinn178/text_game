@@ -1,7 +1,7 @@
 import unittest
 from mock import patch
 from game import commands
-from game.exceptions import UnimplementedException, QuitGame
+from game.exceptions import QuitGame
 from tests.utils import suppress_input, suppress_output
 
 class TestCommands(unittest.TestCase):
@@ -17,19 +17,18 @@ class TestCommands(unittest.TestCase):
         self.assertTrue(hasattr(commands, 'Save'))
         self.assertTrue(hasattr(commands, 'Quit'))
 
-    @unittest.skip('Unskip this test when making the game')
     @suppress_output
     @suppress_input
     @patch('game.gamestate.GameState')
     def test_execute(self, *mocks):
         """
-        Test that all Command's execute function is implemented
+        Test that all Commands' execute function is implemented
         """
         game_state = mocks[0]
         for cmd, cls in commands.ALL_COMMANDS.items():
             try:
                 cls.execute([cmd], game_state)
-            except Exception:
+            except QuitGame:
                 pass
 
     def test_make_alias(self):
@@ -52,17 +51,16 @@ class TestCommands(unittest.TestCase):
         Tests that the Go command works
         """
         game_state, loc1, loc2 = mocks
+        loc1.go.return_value = loc2
         game_state.curr_location = loc1
+
         commands.Go.execute(['go', 'north'], game_state)
         self.assertEqual(loc1.go.call_args, (('north',),))
+        self.assertEqual(game_state.curr_location, loc2)
+
+        # check alias converts before sending to Location.go()
         commands.Go.execute(['go', 'n'], game_state)
         self.assertEqual(loc1.go.call_args, (('north',),))
-
-        raise unittest.SkipTest('Unskip this test when making the game')
-
-        loc1.add_neighbor('north', loc2)
-        commands.Go.exceute(['go', 'north'], game_state)
-        self.assertEqual(game_state.curr_location, loc2)
 
     @suppress_input
     @patch('game.gamestate.GameState')
