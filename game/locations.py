@@ -19,6 +19,10 @@ class Location(object):
         """
         Initialize changeable properties of a location here. Accepts any number of arguments
         that represents the items in this location initially.
+
+        @param name (String) -- the name of this Location
+        @param description (String) -- the description for this Location
+        @param items (List<Item>) -- a list of Items starting at this Location
         """
         self.name = name
         self.description = description
@@ -29,13 +33,16 @@ class Location(object):
 
     def __str__(self):
         """
-        Returns a print-friendly version of this location.
+        @returns (String) a print-friendly version of this location.
         """
         return "<Location: %s>" % self.name
 
     def add_neighbor(self, direction, location):
         """
         Adds the provided location in the specified direction
+
+        @param direction (String) -- the full name of the direction to add the Location
+        @param location (Location) -- the Location object to add as a neighbor
         """
         raise UnimplementedException
 
@@ -58,7 +65,7 @@ class Location(object):
 
     def get_long_description(self):
         """
-        Returns a String containing information about this location on the `look` command.
+        @returns (String) all information about this location on the `look` command.
         Should include the location's name, description, available items, and directions
         the player can move in.
         """

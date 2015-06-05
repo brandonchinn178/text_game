@@ -11,13 +11,16 @@ class Item(object):
     def __init__(self, name, description):
         """
         Creates a new Item with the given name and description
+
+        @param name (String) -- the name of this Item
+        @param description (String) -- the description for this Item
         """
         self.name = name
         self.description = description
 
     def __str__(self):
         """
-        Returns a print-friendly string representing this item
+        @returns (String) a print-friendly string representing this item
         """
         return "<Item: %s>" % self.name
 
@@ -29,7 +32,7 @@ class Item(object):
         @param game_state (GameState) -- the game state that contains information about the
             current game
         """
-        return
+        pass
 
 class ExampleItem(Item):
     """

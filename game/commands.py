@@ -14,7 +14,8 @@ class Command(object):
     def execute(user_input, game_state):
         """
         The function that will be called when a user calls this command. All Commands
-        need to overwrite this function.
+        need to overwrite this function. To quit the game, call `raise QuitGame` in this
+        function (See Quit for an example).
 
         @param user_input (List<String>) -- the user's input split by whitespace
         @param game_state (GameState) -- the current game state

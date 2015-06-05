@@ -4,6 +4,10 @@ from exceptions import QuitGame
 def capture_input(prompt=GAME_PROMPT):
     """
     Helper function that prompts and returns user input. Catches all KeyboardInterrupt signals
+
+    @param prompt (String) -- the String used to prompt the user
+
+    @returns (List<String>) the user input, split by whitespace
     """
     user_input = ''
     while not user_input:
@@ -26,9 +30,12 @@ COLORS = {
 
 def colorize(message, color):
     """
-    Turns the message into a message in the given color. The available colors are available
-    in the COLORS dictionary above. Example usage:
-        print colorize('This is red!', 'red')
-        print colorize('This is cyan!', 'cyan')
+    Turns the message into a message in the given color.
+
+    @param message (String) -- the message to transform
+    @param color (String) -- the color to turn the message into. The available colors are
+        given in the COLORS dictionary above.
+
+    @returns (String) the color transformed message
     """
     return "\x1b[3%dm%s\x1b[0m" % (COLORS[color], message)

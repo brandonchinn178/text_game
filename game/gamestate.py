@@ -91,9 +91,9 @@ class GameState(object):
 def initialize_locations():
     """
     A helper function that initializes all of the locations, and their neighbors and items.
-    Returns a tuple, with two elements:
-        - a dictionary mapping location name to Location
-        - the starting point
+
+    @returns (Dictionary<String, Location>, Location) a dictionary mapping location name
+        to Location, and the starting Location in a new game
     """
     from locations import *
     from items import *
