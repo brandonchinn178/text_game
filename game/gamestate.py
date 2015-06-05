@@ -95,14 +95,15 @@ def initialize_locations():
         - a dictionary mapping location name to Location
         - the starting point
     """
-    import locations as l, items as i
+    from locations import *
+    from items import *
     all_locations = {}
 
     # INITIALIZE ALL LOCATIONS HERE WITH INITIAL ITEMS
-    example_location1 = l.Location('A Location', 'This is a location.', i.ExampleItem())
-    example_location2 = l.Location('Special Location', 'This is a special location.')
-    example_location3 = l.ExampleLocation(i.Item('Shoe', 'Wear this for comfort.'))
-    example_location4 = l.ExampleLocation()
+    example_location1 = Location('A Location', 'This is a location.', ExampleItem())
+    example_location2 = Location('Special Location', 'This is a special location.')
+    example_location3 = ExampleLocation(Item('Shoe', 'Wear this for comfort.'))
+    example_location4 = ExampleLocation()
 
     # ADD ALL NEIGHBORS/ITEMS TO A LOCATION AND ADD LOCATION TO ALL_LOCATIONS
     example_location1.add_neighbor('north', example_location2)

@@ -1,7 +1,7 @@
 Text Game
 =========
 
-This project is a general layout for a text-based game similar to Zork. In the files, there will be comments that provide guidance on what code should be put there. Be creative, and build your own, unique, text-based game!
+This project is a general layout for a text-based game similar to [Zork](http://textadventures.co.uk/games/view/5zyoqrsugeopel3ffhz_vq/zork). In the files, there will be comments that provide guidance on what code should be put there. Be creative, and build your own, unique, text-based game!
 
 Installation
 ------------
@@ -30,3 +30,19 @@ In this project, the following files are provided:
 - `constants.py`: This is the file containing constants used in the code.
 - `exceptions.py`: This is the file containing the game-specific Exception classes that will be passed around.
 - `utils.py`: This is the file containing helper functions that make certain tasks easier.
+
+Directions
+----------
+
+The following functions are necessary to the game infrastructure and are necessary in order to make the game work:
+
+- `commands.py`: Implement the `Command.execute` function for the following commands: `Examine`, `Look`, `Use`
+- `locations.py`: Implement the functions in the `Location` class
+
+The following steps customize the various aspects of your game:
+
+- `commands.py`: Place all commands users may use in the game in this file. To make a new Command, make a new subclass of Command and add the command to `ALL_COMMANDS`
+- `initialize_locations` in `gamestate.py`: This function sets up the locations for a new game, using the `Location` constructor and the `Location.add_neighbors` function, and adds items to their starting locations.
+- `locations.py`: Make new `Location` subclasses if you wish to make specialized locations.
+- `items.py`: Make new `Item` subclasses if you wish to make specialized items.
+- `GameState` in `gamestate.py`: Set up instance variables that track any progress for the game. This class is the object that will be saved when a user saves their progress, so put everything necessary between saves into this class.
