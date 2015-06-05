@@ -6,7 +6,8 @@ from constants import SAVE_LOCATION
 from utils import capture_input, colorize
 from game.exceptions import QuitGame
 
-import locations
+from locations import *
+from items import *
 
 class GameState(object):
     """
@@ -95,8 +96,6 @@ def initialize_locations():
     @returns (Dictionary<String, Location>, Location) a dictionary mapping location name
         to Location, and the starting Location in a new game
     """
-    from locations import *
-    from items import *
     all_locations = {}
 
     # INITIALIZE ALL LOCATIONS HERE WITH INITIAL ITEMS
