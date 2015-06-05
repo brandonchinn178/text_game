@@ -46,6 +46,14 @@ class Location(object):
         """
         raise UnimplementedException
 
+    def add_item(self, item):
+        """
+        Adds the provided item to this Location's list of items
+
+        @param item (Item) -- the Item to add to the list of items
+        """
+        raise UnimplementedException
+
     def get_directions(self):
         """
         @returns (List<String>) the available directions to move
