@@ -92,7 +92,7 @@ class GameState(object):
         """
         print 'You finished the game!'
 
-    def get_item(self, item_name):
+    def get_inventory_item(self, item_name):
         """
         Retrieves the Item from the user's inventory with the given item_name
 
@@ -102,9 +102,10 @@ class GameState(object):
         """
         raise UnimplementedException
 
-    def remove_item(self, item_name):
+    def remove_inventory_item(self, item_name):
         """
-        Removes the Item with the given item_name from the user's inventory
+        Removes the Item with the given item_name from the user's inventory. If no item
+        with the given name exists in the inventory, does nothing.
 
         @param item_name (String) -- the name of the Item to remove
         """
