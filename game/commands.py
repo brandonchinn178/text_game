@@ -163,6 +163,16 @@ class Drop(Command):
     def execute(user_input, game_state):
         raise UnimplementedException
 
+class Inventory(Command):
+    """
+    Prints out the user's inventory
+    """
+    description = 'See your inventory'
+
+    @staticmethod
+    def execute(user_input, game_state):
+        raise UnimplementedException
+
 """
 ADD MORE COMMANDS HERE
 """
@@ -181,5 +191,6 @@ ALL_COMMANDS = {
     'use': Use,
     'take': Take,
     'drop': Drop,
+    'inventory': Inventory,
     # ADD MORE COMMANDS HERE
 }
