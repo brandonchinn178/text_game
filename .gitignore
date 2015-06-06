@@ -1,1 +1,4 @@
 *.pyc
+
+# any saved game files
+saved_game.pckl
