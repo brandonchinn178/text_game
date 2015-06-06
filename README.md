@@ -38,7 +38,7 @@ The following functions are necessary to the game infrastructure and are necessa
 
 - `commands.py`: Implement the `Command.execute` function for the following commands: `Examine`, `Look`, `Use`
 - `locations.py`: Implement the functions in the `Location` class
-- `gamestate.py`: Implement the `get_item` and `remove_item` functions in the `GameState` class
+- `gamestate.py`: Implement the item functions in the `GameState` class
 
 The following steps customize the various aspects of your game:
 

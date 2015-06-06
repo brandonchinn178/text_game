@@ -20,6 +20,7 @@ class GameState(object):
         This function initializes a new GameState for a new game.
         """
         # a dictionary mapping location name to Location instance
+        # the Location the user is currently at
         self.locations, self.curr_location = initialize_locations()
 
         # True when game is finished
@@ -108,6 +109,19 @@ class GameState(object):
         with the given name exists in the inventory, does nothing.
 
         @param item_name (String) -- the name of the Item to remove
+        """
+        raise UnimplementedException
+
+    def get_item(self, item_name):
+        """
+        Retrieves the Item from either the user's inventory or from the current location.
+        Useful for commands that only depend on the user's proximity to an item, such as
+        Taking an item or Using an item.
+
+        @param item_name (String) -- the name of the Item to retrieve
+
+        @returns (Item|None) the Item with the given name from either the inventory or
+            the currently location, or None if no Item from either place
         """
         raise UnimplementedException
 
