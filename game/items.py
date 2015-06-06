@@ -18,7 +18,7 @@ class Item(object):
         """
         return "<Item: %s>" % self.name
 
-    def use(game_state):
+    def use(self, game_state):
         """
         Every item that does something must overwrite this function. By default, an item
         does not do anything when used.
@@ -39,5 +39,5 @@ class ExampleItem(Item):
             description='This item will be absolutely pointless in the game'
         )
 
-    def use(game_state):
+    def use(self, game_state):
         print 'You used an example item!'
