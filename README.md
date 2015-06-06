@@ -38,11 +38,12 @@ The following functions are necessary to the game infrastructure and are necessa
 
 - `commands.py`: Implement the `Command.execute` function for the following commands: `Examine`, `Look`, `Use`
 - `locations.py`: Implement the functions in the `Location` class
+- `gamestate.py`: Implement the `get_item` and `remove_item` functions in the `GameState` class
 
 The following steps customize the various aspects of your game:
 
 - `commands.py`: Place all commands users may use in the game in this file. To make a new Command, make a new subclass of Command and add the command to `ALL_COMMANDS`
-- `initialize_locations` in `gamestate.py`: This function sets up the locations for a new game, using the `Location` constructor and the `Location.add_neighbors` function, and adds items to their starting locations.
+- `initialize_locations` in `gamestate.py`: This function sets up the locations for a new game, using the `Location` constructor and the `Location.add_neighbors` function, and adds items to their starting locations
 - `locations.py`: Make new `Location` subclasses if you wish to make specialized locations.
-- `items.py`: Make new `Item` subclasses if you wish to make specialized items.
-- `GameState` in `gamestate.py`: Set up instance variables that track any progress for the game. This class is the object that will be saved when a user saves their progress, so put everything necessary between saves into this class.
+- `items.py`: Make new `Item` subclasses if you wish to make specialized items
+- `GameState` in `gamestate.py`: Set up instance variables that track any progress for the game. This class is the object that will be saved when a user saves their progress, so put everything necessary between saves into this class

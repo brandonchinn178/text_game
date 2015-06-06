@@ -18,10 +18,10 @@ class Location(object):
         """
         self.name = name
         self.description = description
-        # dictionary mapping direction to name of Location
+        # dictionary mapping direction to Location
         self.neighbors = {}
-        # list of items in this room
-        self.items = []
+        # dictionary mapping item name to Item
+        self.items = {}
 
     def __str__(self):
         """

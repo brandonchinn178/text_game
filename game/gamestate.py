@@ -4,7 +4,7 @@ import pickle
 from commands import ALL_COMMANDS
 from constants import SAVE_LOCATION
 from utils import capture_input, colorize
-from game.exceptions import QuitGame
+from exceptions import QuitGame, UnimplementedException
 
 from locations import *
 from items import *
@@ -17,13 +17,16 @@ class GameState(object):
     """
     def __init__(self):
         """
-        This function initializes an empty GameState for a new game.
+        This function initializes a new GameState for a new game.
         """
         # a dictionary mapping location name to Location instance
         self.locations, self.curr_location = initialize_locations()
 
         # True when game is finished
         self.finished = False
+
+        # List of items in the user's inventory
+        self.inventory = []
 
         ### INITIALIZE OTHER VARIABLES HERE ###
 
@@ -88,6 +91,24 @@ class GameState(object):
         Does any end-of-game actions
         """
         print 'You finished the game!'
+
+    def get_item(self, item_name):
+        """
+        Retrieves the Item from the user's inventory with the given item_name
+
+        @param item_name (String) -- the name of the Item to retrieve
+
+        @returns (Item|None) the Item with the given name, or None if there isn't any
+        """
+        raise UnimplementedException
+
+    def remove_item(self, item_name):
+        """
+        Removes the Item with the given item_name from the user's inventory
+
+        @param item_name (String) -- the name of the Item to remove
+        """
+        raise UnimplementedException
 
 def initialize_locations():
     """
