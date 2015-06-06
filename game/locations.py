@@ -9,27 +9,19 @@ class Location(object):
     You may subclass Location to create other types of locations, such as DungeonLocation
     or something.
     """
-    # name of this location
-    name = ''
-
-    # description of this location
-    description = ''
-
-    def __init__(self, name, description, *items):
+    def __init__(self, name, description):
         """
-        Initialize changeable properties of a location here. Accepts any number of arguments
-        that represents the items in this location initially.
+        Creates a new Location with the given name and description
 
         @param name (String) -- the name of this Location
         @param description (String) -- the description for this Location
-        @param items (List<Item>) -- a list of Items starting at this Location
         """
         self.name = name
         self.description = description
         # dictionary mapping direction to name of Location
         self.neighbors = {}
         # list of items in this room
-        self.items = items
+        self.items = []
 
     def __str__(self):
         """

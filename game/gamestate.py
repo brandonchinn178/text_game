@@ -98,13 +98,13 @@ def initialize_locations():
     """
     all_locations = {}
 
-    # INITIALIZE ALL LOCATIONS HERE WITH INITIAL ITEMS
-    example_location1 = Location('A Location', 'This is a location.', ExampleItem())
+    # INITIALIZE ALL LOCATIONS
+    example_location1 = Location('A Location', 'This is a location.')
     example_location2 = Location('Special Location', 'This is a special location.')
-    example_location3 = ExampleLocation(Item('Shoe', 'Wear this for comfort.'))
+    example_location3 = ExampleLocation()
     example_location4 = ExampleLocation()
 
-    # ADD ALL NEIGHBORS/ITEMS TO A LOCATION AND ADD LOCATION TO ALL_LOCATIONS
+    # ADD ALL NEIGHBORS TO A LOCATION AND ADD LOCATION TO ALL_LOCATIONS
     example_location1.add_neighbor('north', example_location2)
     example_location1.add_neighbor('east', example_location3)
     all_locations[example_location1.name] = example_location1
@@ -120,5 +120,9 @@ def initialize_locations():
     example_location4.add_neighbor('west', example_location2)
     example_location4.add_neighbor('south', example_location3)
     all_locations[example_location4.name] = example_location4
+
+    # ADD ITEMS TO LOCATIONS
+    example_location1.add_item(ExampleItem())
+    example_location3.add_item(Item('Shoe', 'Wear this for comfort.'))
 
     return (all_locations, example_location1)

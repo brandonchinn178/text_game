@@ -2,12 +2,6 @@ class Item(object):
     """
     The base class for every item in the game
     """
-    # name of the item
-    name = ''
-
-    # description of the item
-    description = ''
-
     def __init__(self, name, description):
         """
         Creates a new Item with the given name and description
